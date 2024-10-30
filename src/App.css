@@ -19,6 +19,19 @@
   width: 200px;
   padding-right: 20px;      
 }
+/* Spotify-like style for main heading (e.g., "Jammming") */
+.main-heading {
+  font-size: 2.5rem;              /* Large, bold size */
+  font-weight: 700;               /* Bold for prominence */
+  color: rgb(250, 244, 244);      /* Bright, almost white color */
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;      /* Adds a modern look */
+  letter-spacing: 1px;            /* Subtle spacing for a clean effect */
+}
+
+
 
 /*setting wallpaper background*/
 body {
