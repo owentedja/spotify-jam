@@ -4,8 +4,8 @@ import './searchresult.css';
 
 function SearchResults() {
   return (
-    <div className="search-results"> //assigns css section to this part of div
-      <h2>Search Results</h2>
+    <div className="search-results"> 
+      <h2 style={{ color: 'white' }}>Search Results</h2>
       <Tracklist />
     </div>
   );

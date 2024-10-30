@@ -1,13 +1,15 @@
 // src/components/Playlist.js
 import React from 'react';
 import Tracklist from './tracklist';
+import './playlist.css';
+import './searchresult.css'; /*for button*/
 
 function Playlist() {
   return (
-    <div>
-      <h2>Your Playlist</h2>
+    <div className='your-playlist'>
+      <h2 style={{ color: 'white' }}>Your Playlist</h2>
       <Tracklist />
-      <button>Save to Spotify</button>
+      <button className='searchresultbutton'>Save to Spotify</button>
     </div>
   );
 }

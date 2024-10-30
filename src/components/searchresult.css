@@ -1,6 +1,45 @@
 /* src/components/SearchResults.css */
 .search-results {
-    text-align: left;      /* Aligns text to the left */
-    margin-left: 10px;        /* Moves the container to the left */
-    padding-left: 10px;    /* Optional padding for spacing */
-  }
+  text-align: left;         /* Aligns text to the left */
+  margin-left: 10px;        /* Moves the container to the left */
+  padding-left: 10px;       /* Optional padding for spacing */
+}
+
+/* Customizing the button */
+.searchresultbutton {
+background-color: #fefdff;
+border: none;
+color: rgb(20, 19, 19);
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+font-size: 12px;
+border-radius:12px;        /* Rounded button */
+transition: all 0.5s;      /* Smooth transition */
+cursor: pointer;
+}
+
+/* Additional Button Hover Effects */
+.searchresultbutton span {
+display: inline-block;
+position: relative;
+transition: 0.5s;          /* Smooth transition on hover */
+}
+
+.searchresultbutton span:after {
+content: '\00bb';          /* Adds >> symbol */
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+
+.searchresultbutton:hover span {
+padding-right: 25px;       /* Space for >> symbol on hover */
+}
+
+.searchresultbutton:hover span:after {
+opacity: 1;                /* Show >> symbol */
+right: 0;
+}
