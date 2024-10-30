@@ -1,0 +1,6 @@
+/* src/components/SearchResults.css */
+.search-results {
+    text-align: left;      /* Aligns text to the left */
+    margin-left: 10px;        /* Moves the container to the left */
+    padding-left: 10px;    /* Optional padding for spacing */
+  }
