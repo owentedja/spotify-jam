@@ -1,16 +1,27 @@
+// SearchResults.js
 import React from 'react';
-import Track from './tracks.js';
-import Tracklist from './tracklist.js';
 import './searchresult.css';
 
-function SearchResults({ tracks }) {
+function SearchResults({ tracks, onAddTrack }) {
   return (
-    <div className="search-results"> 
-      <h2 style={{ color: 'white' }}>Search Results</h2>
-      {tracks.map((track) => (
-        <Track key={track.id} track={track} />
-      ))}
-      <Tracklist />
+    <div className="search-results">
+      <h2>Search Results</h2>
+      <div className="track-list">
+        {tracks.map(track => (
+          <div key={track.id} className="track">
+            <div className="track-info">
+              <p>{track.name} - {track.artist} ({track.album})</p>
+            </div>
+            <button 
+              onClick={() => onAddTrack(track)} 
+              className="add-button"
+              title="Add to Playlist"
+            >
+              +
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

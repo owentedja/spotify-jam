@@ -2,8 +2,14 @@ import './App.css';
 import SearchBar from './components/searchbar';
 import SearchResults from './components/searchresult';
 import Playlist from './components/playlist';
-
+import React, { useState } from 'react';
 function App() {
+  const [playlistName, setPlaylistName] = useState("New Playlist");
+
+  const updatePlaylistName = (name) => {
+    setPlaylistName(name);
+  };
+  
   // Hard-coded array of track objects
   const tracks = [
     {
@@ -26,7 +32,7 @@ function App() {
     },
   ];
   
-
+  
 
   return (
     <div className="App">
@@ -34,7 +40,8 @@ function App() {
       <SearchBar />
       <div className="app-content">
         <SearchResults tracks={tracks} /> {/* Pass tracks as a prop */}
-        <Playlist />
+        <Playlist playlistName={playlistName}
+          onNameChange={updatePlaylistName} />
       </div>
     </div>
   );
