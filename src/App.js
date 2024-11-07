@@ -5,32 +5,30 @@ import Playlist from './components/playlist';
 import React, { useState } from 'react';
 function App() {
   const [playlistName, setPlaylistName] = useState("New Playlist");
+  const [playlistTracks, setPlaylistTracks] = useState([]);
+  
 
   const updatePlaylistName = (name) => {
     setPlaylistName(name);
   };
+  // Add track to playlist if it doesn't exist already
+  const addTrackToPlaylist = (track) => {
+    if (!playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      setPlaylistTracks([...playlistTracks, track]);
+    }
+  };
   
-  // Hard-coded array of track objects
-  const tracks = [
-    {
-      id: 1,
-      name: "Track One",
-      artist: "Artist One",
-      album: "Album One",
-    },
-    {
-      id: 2,
-      name: "Track Two",
-      artist: "Artist Two",
-      album: "Album Two",
-    },
-    {
-      id: 3,
-      name: "Track Three",
-      artist: "Artist Three",
-      album: "Album Three",
-    },
-  ];
+   // Remove track from playlist
+   const removeTrackFromPlaylist = (track) => {
+    setPlaylistTracks(playlistTracks.filter(savedTrack => savedTrack.id !== track.id));
+  };
+
+  const [searchResults] = useState([
+    { id: 1, name: "Track One", artist: "Artist One", album: "Album One" },
+    { id: 2, name: "Track Two", artist: "Artist Two", album: "Album Two" },
+    { id: 3, name: "Track Three", artist: "Artist Three", album: "Album Three" },
+  ]);
+
   
   
 
@@ -39,9 +37,12 @@ function App() {
       <h1 style={{ color: 'white' }}>Jammming</h1>
       <SearchBar />
       <div className="app-content">
-        <SearchResults tracks={tracks} /> {/* Pass tracks as a prop */}
+         <SearchResults tracks={searchResults} onAddTrack={addTrackToPlaylist} />
         <Playlist playlistName={playlistName}
-          onNameChange={updatePlaylistName} />
+          onNameChange={updatePlaylistName}
+          playlistTracks={playlistTracks} 
+          onRemoveTrack={removeTrackFromPlaylist} // Pass remove function to Playlist
+        />
       </div>
     </div>
   );
