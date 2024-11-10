@@ -11,22 +11,27 @@ function App() {
   const updatePlaylistName = (name) => {
     setPlaylistName(name);
   };
-  // Add track to playlist if it doesn't exist already
+  // Add review to list
   const addTrackToPlaylist = (track) => {
     if (!playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
       setPlaylistTracks([...playlistTracks, track]);
     }
   };
   
-   // Remove track from playlist
+   // Remove review from list
    const removeTrackFromPlaylist = (track) => {
     setPlaylistTracks(playlistTracks.filter(savedTrack => savedTrack.id !== track.id));
   };
 
+  
+
   const [searchResults] = useState([
-    { id: 1, name: "Track One", artist: "Artist One", album: "Album One" },
-    { id: 2, name: "Track Two", artist: "Artist Two", album: "Album Two" },
-    { id: 3, name: "Track Three", artist: "Artist Three", album: "Album Three" },
+    { id: 1, accessibility: "wheel chair ramp", category: "available", review: "5/5" },
+    { id: 2, accessibility: "quite area", category: "not available", review : "0/5" },
+    { id: 3, accessibility: "public bathroom", category: "available", review: "3/5" },
+    { id: 4, accessibility: "wheel chair ramp", category: "available", review: "4/5" },
+    { id: 5, accessibility: "public bathroom", category: "available", review: "2/5" },
+
   ]);
 
   
@@ -34,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 style={{ color: 'white' }}>Jammming</h1>
+      <h1 style={{ color: 'black' }}>Enter a zipcode</h1>
       <SearchBar />
       <div className="app-content">
          <SearchResults tracks={searchResults} onAddTrack={addTrackToPlaylist} />

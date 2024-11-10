@@ -7,10 +7,11 @@
 
 /* Playlist name input styling - Spotify-inspired */
 .playlist-name-input {
-  width: 100%;
+  width: 200%;
+  max-width: 400px;
   padding: 20px 18px; /* Adjust padding for a balanced look */
   font-size: 16px;
-  color: #fff;
+  color: #151414;
   background-color: #121212; /* Darker background for a sleeker look */
   border: 1px solid #282828; /* Subtle border to match Spotify theme */
   border-radius: 20px; /* Rounded corners */
@@ -26,28 +27,36 @@
 .playlist-name-input::placeholder {
   color: #b3b3b3; /* Spotify’s gray for placeholders */
   font-size: 14px;
-}
+}n
 
 /* Hover effect */
 .playlist-name-input:hover {
   background-color: #1a1a1a; /* Slightly lighter on hover */
-  border-color: #1ed760; /* Spotify’s green accent */
+  border-color: #fdfefd; /* Spotify’s green accent */
 }
 
 /* Focus effect */
 .playlist-name-input:focus {
-  border-color: #1ed760; /* Spotify green for focus */
-  box-shadow: 0px 4px 12px rgba(30, 215, 96, 0.4); /* Green glow on focus */
+  border-color: #222322; 
+  box-shadow: 0px 4px 12px rgba(252, 253, 252, 0.4); /* Green glow on focus */
 }
 .playlist-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #121312; 
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 10px;
+  letter-spacing: 1px;
+  
+
+  
 }
+
 
 .remove-button {
   background-color: transparent;
-  color: red;
+  color: white;
   border: none;
   cursor: pointer;
   font-size: 14px;
@@ -56,3 +65,4 @@
 .remove-button:hover {
   text-decoration: underline;
 }
+

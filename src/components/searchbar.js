@@ -5,7 +5,7 @@ import './searchbar.css';
 function SearchBar() {
     return (
       <div>
-        <input type="text" placeholder="Enter a song, album, or artist" />
+        <input type="text" placeholder="enter zipcode" />
         
         <div>
         </div>

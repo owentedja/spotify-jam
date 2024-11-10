@@ -10,7 +10,7 @@ function SearchResults({ tracks, onAddTrack }) {
         {tracks.map(track => (
           <div key={track.id} className="track">
             <div className="track-info">
-              <p>{track.name} - {track.artist} ({track.album})</p>
+              <p>{track.accessibility} - {track.category} ({track.review})</p>
             </div>
             <button 
               onClick={() => onAddTrack(track)} 
